@@ -2,7 +2,20 @@
 
 Architecture and delivery documentation for a React-based reinsurance analytics proof of concept integrated with Azure Databricks and Unity Catalog.
 
-> Status: architecture approved in principle; application implementation has not started. Review the open decisions in [docs/07-delivery-roadmap.md](docs/07-delivery-roadmap.md) before development begins.
+> Status: the first interactive UI POC is implemented with simulated Databricks behavior. Entra ID, Databricks Jobs, Unity Catalog result paging, and production XLSX generation remain adapter integrations pending environment details.
+
+## Run the application
+
+The UI requires Node.js 22.13 or newer.
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000`. Run `npm test` to compile the production application and verify the server-rendered workbench.
+
+The current POC uses realistic demo data and browser-local run history. It does not contain Databricks credentials or make external data-platform calls.
 
 ## Documentation map
 
@@ -30,4 +43,3 @@ Architecture and delivery documentation for a React-based reinsurance analytics 
 ## Working agreement for future sessions
 
 Treat these documents as the baseline requirements unless the product owner explicitly changes a decision. Record material changes in the relevant document's decision log and update all affected diagrams, interfaces, security controls, and acceptance criteria together.
-
