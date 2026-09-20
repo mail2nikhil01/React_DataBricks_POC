@@ -62,10 +62,10 @@ export function Workbench() {
   const pageSize = 8;
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("aurelis-demo-runs");
+    const saved = window.localStorage.getItem("aon-demo-runs");
     if (saved) setRuns(JSON.parse(saved));
   }, []);
-  useEffect(() => { window.localStorage.setItem("aurelis-demo-runs", JSON.stringify(runs)); }, [runs]);
+  useEffect(() => { window.localStorage.setItem("aon-demo-runs", JSON.stringify(runs)); }, [runs]);
   useEffect(() => { if (!toast) return; const timer = window.setTimeout(() => setToast(""), 3200); return () => window.clearTimeout(timer); }, [toast]);
 
   const filteredRows = useMemo(() => resultRows.filter((row) => `${row.id} ${row.cedant} ${row.region} ${row.layer}`.toLowerCase().includes(query.toLowerCase())), [query]);
@@ -93,7 +93,7 @@ export function Workbench() {
 
   return <div className="app-shell">
     <aside className={`sidebar ${mobileNav ? "sidebar-open" : ""}`}>
-      <div className="brand"><span className="brand-mark"><span>A</span></span><div><strong> AON </strong><small></small></div></div>
+      <div className="brand"><img src="/aon-logo.png" alt="AON" /></div>
       <button className="icon-button close-nav" onClick={() => setMobileNav(false)} aria-label="Close navigation"><X size={19} /></button>
       <nav aria-label="Primary navigation">
         <p className="nav-label">WORKSPACE</p>

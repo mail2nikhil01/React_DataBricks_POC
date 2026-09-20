@@ -6,7 +6,7 @@ const inter = Inter({ variable: "--font-sans", subsets: ["latin"] });
 const mono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Aurelis Re | Analytics Workbench",
+  title: "AON | Analytics Workbench",
   description: "Governed reinsurance model execution and result analysis.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
