@@ -93,7 +93,7 @@ export function Workbench() {
 
   return <div className="app-shell">
     <aside className={`sidebar ${mobileNav ? "sidebar-open" : ""}`}>
-      <div className="brand"><span className="brand-mark"><span>A</span></span><div><strong>AURELIS</strong><small>REINSURANCE</small></div></div>
+      <div className="brand"><span className="brand-mark"><span>A</span></span><div><strong> AON </strong><small></small></div></div>
       <button className="icon-button close-nav" onClick={() => setMobileNav(false)} aria-label="Close navigation"><X size={19} /></button>
       <nav aria-label="Primary navigation">
         <p className="nav-label">WORKSPACE</p>
@@ -103,7 +103,7 @@ export function Workbench() {
       <div className="sidebar-foot"><button><CircleHelp size={18} /><span>Support</span></button><button><Settings size={18} /><span>Settings</span></button><div className="identity"><span>NS</span><div><strong>Nikheel Sharma</strong><small>Reinsurance Analytics</small></div><ChevronDown size={16} /></div></div>
     </aside>
 
-    <main><header className="topbar"><button className="icon-button mobile-menu" onClick={() => setMobileNav(true)} aria-label="Open navigation"><Menu size={20} /></button><div className="environment"><span /> Demo environment</div><div className="top-actions"><button className="icon-button" aria-label="Notifications"><Bell size={19} /><i /></button><button className="avatar" aria-label="User menu">NS</button></div></header>
+    <main><header className="topbar"><button className="icon-button mobile-menu" onClick={() => setMobileNav(true)} aria-label="Open navigation"><Menu size={20} /></button><div className="environment"><span /> Test Environment</div><div className="top-actions"><button className="icon-button" aria-label="Notifications"><Bell size={19} /><i /></button><button className="avatar" aria-label="User menu">NS</button></div></header>
       {view === "overview" && <Overview runs={runs} onNew={() => setShowLauncher(true)} onRun={openRun} onViewAll={() => setView("runs")} />}
       {view === "models" && <Models onLaunch={(name) => { setModelName(name); setShowLauncher(true); }} />}
       {view === "runs" && (selectedRun ? <RunDetail run={runs.find((item) => item.id === selectedRun.id) ?? selectedRun} onBack={() => setSelectedRun(null)} query={query} setQuery={(value) => { setQuery(value); setPage(1); }} rows={visibleRows} page={page} pageCount={pageCount} total={filteredRows.length} setPage={setPage} onDownload={downloadSample} /> : <RunHistory runs={runs} onRun={openRun} onNew={() => setShowLauncher(true)} />)}
@@ -116,7 +116,7 @@ export function Workbench() {
 
 function Overview({ runs, onNew, onRun, onViewAll }: { runs: Run[]; onNew: () => void; onRun: (run: Run) => void; onViewAll: () => void }) {
   const active = runs.filter((run) => run.status === "Running" || run.status === "Queued").length;
-  return <div className="page"><div className="page-heading"><div><p className="eyebrow">FRIDAY, 19 SEPTEMBER</p><h1>Good morning, Nikheel</h1><p>Your reinsurance analytics workspace is up to date.</p></div><button className="primary-button" onClick={onNew}><Plus size={18} /> New model run</button></div>
+  return <div className="page"><div className="page-heading"><div><p className="eyebrow">FRIDAY, 19 SEPTEMBER</p><h1>Good Morning</h1><p>Your reinsurance analytics workspace is up to date.</p></div><button className="primary-button" onClick={onNew}><Plus size={18} /> New model run</button></div>
     <section className="metric-row" aria-label="Run summary">
       <Metric icon={Activity} tone="green" label="ACTIVE RUNS" value={String(active)} note="1 running now" />
       <Metric icon={CheckCircle2} tone="blue" label="COMPLETED TODAY" value="7" note="+2 vs. yesterday" />

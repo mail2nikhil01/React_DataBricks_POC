@@ -17,9 +17,9 @@ test("server-renders the reinsurance analytics workbench", async () => {
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
   const html = await response.text();
-  assert.match(html, /<title>Aurelis Re \| Analytics Workbench<\/title>/i);
-  assert.match(html, /Good morning, Nikheel/);
+  assert.match(html, /<title>AON\| Analytics Workbench<\/title>/i);
+  assert.match(html, /Good Morning/);
   assert.match(html, /Portfolio Loss Allocation/);
-  assert.match(html, /Demo environment/);
+  assert.match(html, /Test Environment/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
